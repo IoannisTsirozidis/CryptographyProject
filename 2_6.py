@@ -8,9 +8,11 @@ abc = {
     'Y': '11000', 'Z': '11001', '.': '11010', '!': '11011', '?': '11100', '(': '11101', ')': '11110', '-': '11111'
 }
 
-help = """Synopsis: otp.py -e|-d
--e encrypt
--d decrypt """
+help = """Run:
+python 2_6.py -help for help message
+python 2_6.py -e for encryption
+python 2_6.py -d for decryption
+"""
 
 def encryption(message, key):
     bin_string = text_to_bin(message)
