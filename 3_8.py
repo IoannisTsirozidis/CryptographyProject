@@ -95,6 +95,9 @@ def KSA(input_key):
 
     return S
 
+#The Pseudo-random generation algorithm (PRGA) constructs an array 'K', which has the same length
+#as the plaintext in binary.The array K, is supposed to have pseudo-random elements (0-256) in each position
+#based on the array S that was constructed with the Key Scheduling Algorithm (KSA).
 
 def PRGA(S, plaintext):
     j = 0
