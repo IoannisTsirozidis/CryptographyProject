@@ -104,6 +104,7 @@ def PRGA(S, plaintext):
     K = []
     s_temp = S
 
+
     pltx = bin_to_INT_list(text_to_bin(plaintext))
 
     for i in range(len(pltx)):
