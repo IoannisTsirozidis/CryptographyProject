@@ -13,24 +13,34 @@ python 2_6.py -help for help message
 python 2_6.py -e for encryption
 python 2_6.py -d for decryption
 """
+# returns a String of 1s and 0s that are converted from integers from ilist
+def intList_to_string_bit(ilist):
+    s = ''
+    for i in ilist:
+        if i == 1:
+            s += '1'
+        else:
+            s += '0'
+
+    return s
 
 def encryption(message, key):
     bin_string = text_to_bin(message)
     bin_key = text_to_bin(key)
 
     # XOR operation between bits of bin_key and bin_message
-    bin_encrypted = [(ord(a) ^ ord(b)) for a, b in zip(bin_key, bin_string)]
+    bin_encrypted = [((ord(a)-48) ^ (ord(b)-48)) for a, b in zip(bin_key, bin_string)]
 
-    return bin_to_text(bin_encrypted)
+    return bin_to_text(intList_to_string_bit(bin_encrypted))
 
 
 def decryption(ciphertext, key):
     bin_string = text_to_bin(ciphertext)
     bin_key = text_to_bin(key)
 
-    bin_decrypted = [(ord(a) ^ ord(b)) for a, b in zip(bin_key, bin_string)]
+    bin_decrypted = [((ord(a)-48) ^ (ord(b)-48)) for a, b in zip(bin_key, bin_string)]
 
-    return bin_to_text(bin_decrypted)
+    return bin_to_text(intList_to_string_bit(bin_decrypted))
 
 
 
@@ -40,8 +50,8 @@ def bin_to_text(bin_text):
     temp = ''
 
     for i in bin_text:
-        if i == 1:
-            temp += '1'
+        if i == '1':
+            temp += i
         else:
             temp += '0'
 
