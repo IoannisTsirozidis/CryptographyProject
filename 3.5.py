@@ -163,7 +163,7 @@ if __name__ == "__main__":
 
     # ---------------------------------------------
     # In Exercise 3.5, the cipher_text given was:
-    cipher_text = "i!))aiszwykqnfcyc!?secnncvch"
+    cipher_text =  "i!))aiszwykqnfcyc!?secnncvch"
 
     # I'm going to convert this text-String into Binary-String, using the function: text_enc()
     bitstream = text_enc(cipher_text)
